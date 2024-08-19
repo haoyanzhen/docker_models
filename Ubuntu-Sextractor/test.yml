@@ -1,0 +1,17 @@
+# Created by hyz in 2023-12-07
+# modify by fzs in 2024-01-03
+# modify by xyp in 2024-06-14
+
+version: '3'
+services:
+  test-10109100232366-25:  # each service should have its own name
+    image: ubuntu-sextractor
+    container_name: docker # each container should have its own name
+    user: csst
+    env_file:
+      - .env
+    volumes:
+    command: > # change it as necessary
+      python /project/app/run.py
+
+
