@@ -12,7 +12,9 @@ RUN --mount=type=cache,id=apt,target=/var/cache/apt \
 RUN --mount=type=cache,id=pip,uid=9000,gid=9000,target=/home/ana/ \
     pip install --index-url https://pypi.tuna.tsinghua.edu.cn/simple/ numpy astropy
 
-COPY . project/config
+COPY . project/
+
+WORKDIR /project/config
 
 RUN --mount=type=cache,id=apt,target=/var/cache/apt \
     source-extractor -d > default.sex \
